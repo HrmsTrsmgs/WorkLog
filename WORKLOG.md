@@ -296,7 +296,7 @@ Truss.Matruss や AC・リリースノート関連を 11/14 に書いたのは�
 
 ---
 
-# 2025-11-18
+# 2025-11-19
 ■ 作業
 - [A/開発環境] **Visual Studio 2026** を導入し、起動・テンプレート類の確認を実施。
 - [A/ポートフォリオ] GitHub Projects に統合ボードを作成（Backlog／Todo／In Progress／Done の初期構成）。
@@ -307,3 +307,19 @@ Truss.Matruss や AC・リリースノート関連を 11/14 に書いたのは�
 
 ---
 
+# 2025-11-19
+■ 作業
+- [A/ツール] ソリューション直下の `.sln` を起点に、配下の `.cs` / `.xaml` を再帰列挙しつつ、`bin` / `obj` や自動生成ファイルを除外したうえで、相対パス付きの Markdown コードブロックとしてクリップボードに出力する PowerShell スクリプトを作成（AI へのコード貼り付け用ツール）。
+- [A/ツール] 上記スクリプトを実行し、このチャット冒頭に貼り付けたソースコード一覧を生成。以降の作業で AI への入力として活用。
+- [A/ApplicationTemplate] WinUI プロジェクトで MainWindow に RelativePanel＋Viewbox＋ボタンによる簡易カウンター機能をコードビハインドで実装し、「最低限動く画面」を用意。
+- [A/ApplicationTemplate] WinUI 初期プロジェクト＋TDD 用プロンプト＋AI 入力用 PowerShell スクリプトをひとまとめにした「TDD 開始用初期セット」としてプルリクエストを作成。
+- [A/ApplicationTemplate] 別ブランチ `chore/prepare-tdd-ready-solution-structure` で、WinUI プロジェクトの既定名前空間および XAML の `x:Class` / `xmlns:local` を `Marimo.ABCDEApplicationTemplate` に統一し、ビルド・起動確認まで実施（リファクタリング＋名前空間統一用 PR）。
+
+■ 決定
+- 今回作成した「TDD 開始用初期セット」（WinUI 初期画面＋TDD プロンプト＋AI 入力用スクリプト）を、今後の TDD サイクルのスタート地点とする。
+- 名前空間は `Marimo.ABCDEApplicationTemplate` に統一し、この前提で以降の ViewModel／テストを追加していく。
+
+■ 明日
+- 体調と本業の状況に応じて、余力があれば：
+  - MainWindow 用の ViewModel を追加し、Red（最初のテスト）から TDD サイクル（Red → Green → Refactor）に入る。
+- 余裕がなければポートフォリオ作業は休止し、休養と本業を優先する。
