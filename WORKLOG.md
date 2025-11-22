@@ -323,3 +323,19 @@ Truss.Matruss や AC・リリースノート関連を 11/14 に書いたのは�
 - 体調と本業の状況に応じて、余力があれば：
   - MainWindow 用の ViewModel を追加し、Red（最初のテスト）から TDD サイクル（Red → Green → Refactor）に入る。
 - 余裕がなければポートフォリオ作業は休止し、休養と本業を優先する。
+# 2025-11-20
+■ 作業
+- [A/ポートフォリオ] GitHub Projects の運用方式（1 ボード＋ Workstream 管理）を再確認し、内部構造の整理方針を固めた。
+- [A/ApplicationTemplate] Visual Studio 2026 を前提とした作業開始計画を整理し、今後のテンプレ開発のスタート地点を明確化。
+- [A/生活調整] 本業の締切作業の影響でポートフォリオ作業量を縮小し、精神回復を優先する運用を検討。
+
+■ 決定
+- ポートフォリオは平日は軽作業中心、実装フェーズは主に土日で進める運用へ移行する。
+# 2025-11-21
+■ 作業
+- [A/ApplicationTemplate] ApplicationTemplate 作成に向けて、MVVM 周辺の最新アーキテクチャ（UseCase 層／ViewModelState／Immutable Domain など）の情報を調査。
+- [A/勉強会資料] 調査内容を整理するため、MVVM の変遷と現在地をまとめる勉強会資料の構想を開始。
+
+■ 決定
+- ApplicationTemplate の設計に先立ち、最新 MVVM アーキテクチャの理解を深めるための勉強会資料「MVVMにいつの間にか黒船が来ていたらしい」を作成する方針とタイトルを採用する。
+
