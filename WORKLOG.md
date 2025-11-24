@@ -339,3 +339,33 @@ Truss.Matruss や AC・リリースノート関連を 11/14 に書いたのは�
 ■ 決定
 - ApplicationTemplate の設計に先立ち、最新 MVVM アーキテクチャの理解を深めるための勉強会資料「MVVMにいつの間にか黒船が来ていたらしい」を作成する方針とタイトルを採用する。
 
+# 2025-11-22
+■ 作業
+- [A/ApplicationTemplate] ViewModel 層を既存のコードから分離し、プレゼンテーションロジックを ViewModel 側へ集約するリファクタリングを実施。
+- [A/ApplicationTemplate] 仕事用コードとは別物として、テンプレートとして恥ずかしくないように構造や命名・責務の切り分けを意識しながら、丁寧に段階的な変更を進めた。
+# 2025-11-23
+■ 作業
+- [A/ApplicationTemplate] Application 層の追加と Presentation 名前空間の整理を実施。以下の内容でプルリクエストを作成。
+  - WinUI／ViewModels／ViewModels.Tests の名前空間を `Marimo.ABCDEApplicationTemplate.Presentation.*` に統一。
+  - `src/Application/Marimo.ABCDEApplicationTemplate.Application.csproj` を新規追加。
+  - `Application.Counter.ICounterUseCase` インターフェースを追加し、今後の UseCase 実装の基盤を整備。
+  - ソリューション全体のビルド、既存 ViewModel テストの合格、WinUI 起動とカウンター動作の確認まで実施。
+- [A/勉強会資料] 「プログラマーのためのAI学習」資料に約 1 時間分追記し、章構成・本文を更新。
+- [A/MarimoShare] 勉強会資料および汎用的な AI プロンプトを管理するための **MarimoShare** リポジトリを整備し、初期コミットを実施（プロンプト／勉強会メモの保管場所を確立）。
+- [A/勉強会資料] 新規勉強会資料として以下 2 本の構想を着想し、メモ作成・構成案の検討を開始。
+  - 「MVVM に黒船が来ていたらしい」
+  - 「エンジニア専門家は AI を秘書にしよう」
+
+# 2025-11-24
+■ 作業
+- [A/ApplicationTemplate] UseCase 層を新規追加。  
+  - `ICounterUseCase` に続き、UseCase 層のファイル／名前空間を整理し、プロジェクト構成として成立するところまで実装。  
+  - まだ Presentation（ViewModel）層との接続は未着手で、Application 層の土台作成に専念。
+- [A/ApplicationTemplate] 実装方針の見直し。  
+  - ViewModel とつなげる前に UseCase を「機能追加」の形で先に作った判断について再検討。  
+  - TDD・レイヤードのセオリーとしては「テストで必要になった最小の UseCase から育てる」ほうが自然で、今回の進め方が妥当だったかどうかを振り返り中。
+
+■ メモ
+- 今日はレイヤー分離を前提にした「Application 層の形を作る日」となり、ViewModel 側と統合する段階までは進まなかった。  
+- 実装順序についての反省はありつつ、UseCase 層を「存在させる」作業はロードマップ上の必要工程であり、中長期的なテンプレート整備としては無駄ではない。
+
